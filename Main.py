@@ -3,7 +3,7 @@
     Associated Files:   Game.py
     Packages Needed:    random
     Date Created:       3/6/2019
-    Author:             John Lukowski
+    Author:             John Lukowski (https://github.com/JLukeSkywalker)
     Date Modified:      6/19/2020 by John Lukowski
     Modified By:        John Lukowski
     License:            CC-BY-SA-4.0
