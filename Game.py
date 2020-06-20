@@ -68,7 +68,11 @@ class Character:
         Returns:    amount of damage dealt
     """
     def doDamage(self, opponent):
-        return opponent.takeDamage(self.strength + rand.randint(0,2))
+        damage = self.strength + rand.randint(0,2)
+        if rand.randint(0,100) < self.critChance:
+            damage *= 2
+            print("%s got a critical strike!" % self.name)
+        return opponent.takeDamage(damage)
 
     """
         Function:   takeDamage
@@ -77,6 +81,13 @@ class Character:
         Returns:    damage dealt
     """
     def takeDamage(self, damage):
+        chance = rand.randint(0,100)
+        if chance < self.blockChance:
+            print("%s blocks the incoming attack" % self.name)
+            return 0
+        elif chance < self.dodgeChance:
+            print("%s dodges the incoming attack" % self.name)
+            return 0
         damage -= self.armor
         if damage < 0:
             return 0
